@@ -1,0 +1,3 @@
+# examples
+
+Beispielkonfigurationen und Vorlagen.
