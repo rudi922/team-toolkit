@@ -19,6 +19,7 @@ Dieses Repository dient als Referenz und Werkzeugkasten zur:
 
 ```
 team-toolkit/
+├── README.md
 ├── docs/
 │   ├── linux/
 │   ├── windows/
@@ -30,6 +31,9 @@ team-toolkit/
 │   ├── windows/
 │   │   └── powershell/
 │   └── vscode/
+│       ├── linux/
+│       ├── windows/
+│       └── common/
 ├── scripts/
 │   ├── linux/
 │   ├── windows/
