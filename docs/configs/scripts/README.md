@@ -1,3 +1,0 @@
-# scripts
-
-Automatisierungen und Hilfsskripte.
