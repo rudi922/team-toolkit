@@ -1,6 +1,6 @@
 # team-toolkit
 
-Language: German
+Language: German  
 Zentrale Sammlung von Konfigurationen, Anleitungen und Hilfsskripten für das Team.
 
 ## Inhalt
