@@ -1,0 +1,21 @@
+// Geben Sie Ihre Tastenzuordnungen in dieser Datei ein, um die Standardwerte außer Kraft zu setzen.
+[
+    {
+        "key": "shift+f5",
+        "command": "-workbench.action.debug.stop",
+        "when": "inDebugMode && !focusedSessionIsAttach"
+    },
+    {
+        "key": "ctrl+shift+oem_1",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "editor.action.insertSnippet",
+        "when": "!editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+oem_7",
+        "command": "editor.action.transformToLowercase"
+    }
+]

@@ -1,0 +1,256 @@
+{
+    // =========================================================================
+    // VS Code User Settings (Windows)
+    // Version: 2026-03-20 16:17:19
+    //
+    // Ziel:
+    // - stabile, wartbare Konfiguration
+    // - saubere Markdown-Umgebung
+    // - keine unnötigen Automatismen
+    // =========================================================================
+
+
+    // =========================================================================
+    // EDITOR – DARSTELLUNG & VERHALTEN
+    // =========================================================================
+
+    "editor.renderWhitespace": "all",              // alle Leerzeichen anzeigen
+    "editor.renderControlCharacters": true,        // Steuerzeichen sichtbar machen
+    "editor.indentSize": "tabSize",                // Einrückung folgt tabSize
+    "editor.minimap.enabled": false,               // Minimap deaktiviert
+
+    // Hover (Korrektur: boolean statt String!)
+    "editor.hover.enabled": "on",
+    "editor.hover.delay": 300,
+
+
+    // =========================================================================
+    // UNICODE-SICHERHEIT
+    // =========================================================================
+
+    "editor.unicodeHighlight.includeComments": true,
+    "editor.unicodeHighlight.nonBasicASCII": true,
+    "editor.unicodeHighlight.ambiguousCharacters": true,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+
+    // deutsche Zeichen explizit erlauben
+    "editor.unicodeHighlight.allowedCharacters": {
+        "ä": true,
+        "ö": true,
+        "ü": true,
+        "Ä": true,
+        "Ö": true,
+        "Ü": true,
+        "ß": true
+    },
+
+
+    // =========================================================================
+    // DATEIEN / CODIERUNG
+    // =========================================================================
+
+    "files.encoding": "utf8",
+    "files.autoGuessEncoding": true,
+
+    // versteckte Dateien sichtbar lassen (wichtig für .git, .vscode etc.)
+    "files.exclude": {
+        "**/.*": false
+    },
+
+    "files.associations": {
+        "*.ps1": "powershell"
+    },
+
+
+    // =========================================================================
+    // GIT
+    // =========================================================================
+
+    "git.path": "D:\\Programm\\PortableGit\\bin\\git.exe",
+    "git.enableSmartCommit": true,
+    "git.openRepositoryInParentFolders": "never",
+    "git.autofetch": false,
+
+
+    // =========================================================================
+    // POWERSHELL (PORTABLE SETUP)
+    // =========================================================================
+
+    "powershell.powerShellAdditionalExePaths": {
+        "PowerShell 7 (ZIP)": "D:\\Programm\\PowerShell7\\pwsh.exe"
+    },
+
+    "powershell.powerShellDefaultVersion": "PowerShell 7 (ZIP)",
+    "powershell.powerShellExePath": "D:\\Programm\\PowerShell7\\pwsh.exe",
+    "powershell.startAutomatically": true,
+    "powershell.enableProfileLoading": true,
+
+
+    // =========================================================================
+    // TERMINAL
+    // =========================================================================
+
+    "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell 7": {
+            "path": "D:\\Programm\\PowerShell7\\pwsh.exe"
+        }
+    },
+
+
+    // =========================================================================
+    // UI
+    // =========================================================================
+
+    "workbench.colorTheme": "Noctis Obscuro",
+    "workbench.iconTheme": "material-icon-theme",
+
+    "window.autoDetectHighContrast": false,
+    "window.customTitleBarVisibility": "windowed",
+    "window.newWindowProfile": "Standard",
+
+    "workbench.editorAssociations": {
+        "*.ps1": "default",
+        "*.sql": "default"
+    },
+
+
+    // =========================================================================
+    // RECHTSCHREIBPRÜFUNG (CSPELL)
+    // =========================================================================
+
+    "cSpell.enabled": true,
+    "cSpell.language": "de,en",
+
+    "cSpell.enabledFileTypes": {
+        "plaintext": true,
+        "markdown": true,
+        "json": true,
+        "ps1": true,
+        "sql": true
+    },
+
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/{info,lfs,logs,refs,objects}/**",
+        ".git/{index,*refs,*HEAD}",
+        ".vscode",
+        ".vscode-insiders",
+        "*.psv"
+    ],
+
+    "cSpell.mergeCSpellSettings": false,
+    "cSpell.checkVSCodeSystemFiles": true,
+
+    "cSpell.userWords": [
+        "Привет"
+    ],
+
+
+    // =========================================================================
+    // SICHERHEIT
+    // =========================================================================
+
+    "security.workspace.trust.untrustedFiles": "open",
+
+    "security.allowedUNCHosts": [
+        "ks00dat30",
+        "ks00dat04"
+    ],
+
+
+    // =========================================================================
+    // DIFF
+    // =========================================================================
+
+    "diffEditor.maxComputationTime": 0,
+
+
+    // =========================================================================
+    // OFFLINE / TELEMETRIE
+    // =========================================================================
+
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": false,
+    "extensions.ignoreRecommendations": true,
+    "extensions.enableMarketplace": false,
+
+    "update.mode": "none",
+    "update.enableWindowsBackgroundUpdates": false,
+
+    "telemetry.telemetryLevel": "off",
+
+    "settingsSync.enabled": false,
+    "liveShare.feature.enabled": false,
+
+
+    // =========================================================================
+    // MARKDOWN – KERNEINSTELLUNGEN
+    // =========================================================================
+
+    "[markdown]": {
+        "editor.wordWrap": "on",
+
+        // KEIN automatisches Formatieren
+        "editor.formatOnSave": false,
+
+        // markdownlint darf NICHT automatisch eingreifen
+        "editor.codeActionsOnSave": {
+            "source.fixAll.markdownlint": "never"
+        },
+
+        // reduzierte Vorschläge beim Schreiben
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "on"
+        },
+
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+
+        // wichtig für Markdown-Zeilenumbrüche
+        "files.trimTrailingWhitespace": false
+    },
+
+
+    // =========================================================================
+    // MARKDOWNLINT
+    // =========================================================================
+
+    "markdownlint.config": {
+        "MD013": false,                 // Zeilenlänge ignorieren
+
+        "MD024": {
+            "siblings_only": true       // gleiche Überschriften erlaubt
+        },
+
+        "MD029": {
+            "style": "ordered"          // echte Nummerierung erzwingen
+        }
+    },
+
+
+    // =========================================================================
+    // MARKDOWN ALL IN ONE
+    // =========================================================================
+
+    "markdown.extension.completion.respectVscodeSearchExclude": true,
+
+    "markdown.extension.list.indentationSize": 2,
+
+    "markdown.extension.orderedList.marker": "ordered",
+    "markdown.extension.orderedList.autoRenumber": true,
+
+    "markdown.extension.toc.slugifyMode": "github",
+    "markdown.extension.toc.orderedList": false,
+    "markdown.extension.toc.unorderedList.marker": "-",
+    "markdown.extension.toc.levels": "2..4",
+    "markdown.extension.toc.updateOnSave": false,
+
+    "markdown.extension.tableFormatter.enabled": true,
+    "markdown.extension.preview.autoShowPreviewToSide": false
+}
