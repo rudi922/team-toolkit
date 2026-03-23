@@ -1,0 +1,245 @@
+{
+  // ============================================================================
+  // VS Code User Settings, Linux
+  // Version: 2026-03-20 15:25:48
+  //
+  // Hinweis:
+  // Diese Datei ist bewusst als JSON mit Kommentaren aufgebaut.
+  // VS Code akzeptiert das in der settings.json problemlos.
+  // Streng genommen ist das JSONC (JSON with Comments).
+  // ============================================================================
+
+  // ============================================================================
+  // OBERFLÄCHE / STARTVERHALTEN
+  // ============================================================================
+
+  // Kein Startbildschirm, keine zuletzt geöffnete Datei als Startansicht.
+  // VS Code startet direkt in eine leere oder zuletzt genutzte Arbeitsumgebung.
+  "workbench.startupEditor": "none",
+
+  // Farbschema der Benutzeroberfläche.
+  // Das ist rein optisch. Hier ist Dein gewähltes dunkles Theme eingetragen.
+  "workbench.colorTheme": "Noctis Obscuro",
+
+  // Dateisymbole im Explorer.
+  // Diese Einstellung steuert nur die Symbolanzeige im Dateibaum.
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Einrückungslinien im Explorer-Baum immer anzeigen.
+  // Das verbessert die Orientierung bei tieferen Verzeichnisstrukturen.
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Diese Einstellung soll profilübergreifend gelten.
+  // Sinnvoll, damit die Unicode-Sicherheitsanzeige nicht je Profil anders reagiert.
+  "workbench.settings.applyToAllProfiles": [
+    "editor.unicodeHighlight.nonBasicASCII"
+  ],
+
+  // ============================================================================
+  // EDITOR / DARSTELLUNG
+  // ============================================================================
+
+  // Alle Leerzeichen sichtbar machen: Leerzeichen, Tabs, Zeilenenden usw.
+  // Gut für Skripte, YAML, Markdown, Makefiles und Fehlersuche.
+  "editor.renderWhitespace": "all",
+
+  // Steuerzeichen sichtbar machen.
+  // Hilfreich, wenn Dateien unerwartete Sonderzeichen enthalten.
+  "editor.renderControlCharacters": true,
+
+  // Normale Schriftstärke des Editor-Fonts.
+  // Diese Einstellung ist funktional nicht zwingend notwendig, bleibt aber drin,
+  // damit das Erscheinungsbild eindeutig festgelegt ist.
+  "editor.fontWeight": "normal",
+
+  // Warnung bei nicht-basis-ASCII-Zeichen aktivieren.
+  // Das ist eine Sicherheitsfunktion gegen verwechselbare oder ungewollte Zeichen.
+  "editor.unicodeHighlight.nonBasicASCII": true,
+
+  // Umlaute und Eszett explizit erlauben, damit deutsche Texte nicht störend
+  // markiert werden.
+  "editor.unicodeHighlight.allowedCharacters": {
+    "ä": true,
+    "ö": true,
+    "ü": true,
+    "Ä": true,
+    "Ö": true,
+    "Ü": true,
+    "ß": true
+  },
+
+  // ============================================================================
+  // SPRACHSPEZIFISCHE EINSTELLUNGEN
+  // ============================================================================
+
+  "[shellscript]": {
+    // Shell-Skripte mit 2 Leerzeichen einrücken.
+    // Das sorgt für einheitliche Einrückung und sauberes Erscheinungsbild.
+    "editor.tabSize": 2,
+
+    // Tabs in Shell-Skripten konsequent in Leerzeichen umwandeln.
+    // Das vermeidet Mischformen aus Tabs und Spaces.
+    "editor.insertSpaces": true,
+
+    // Shell-Skripte beim Speichern automatisch formatieren.
+    // Das ist für Shell meist sinnvoll, weil die Struktur klar und technisch ist.
+    "editor.formatOnSave": true
+  },
+
+  "[markdown]": {
+    // Markdown im Editor weich umbrechen.
+    // Das verbessert die Lesbarkeit langer Textzeilen deutlich,
+    // ohne dass die Datei selbst hart umgebrochen werden muss.
+    "editor.wordWrap": "on",
+
+    // Normales Formatieren beim Speichern für Markdown bewusst AUS.
+    // Dadurch greift kein allgemeiner Formatter ungefragt beim Speichern ein.
+    "editor.formatOnSave": false,
+
+    // Code-Actions beim Speichern für Markdown.
+    // WICHTIG:
+    // markdownlint soll beim Speichern NICHT automatisch reparieren.
+    // Sonst werden Listen oder andere Dinge beim Speichern ungefragt verändert.
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "never"
+    },
+
+    // In Markdown keine aggressiven Vorschläge innerhalb von Kommentaren
+    // oder Zeichenketten. Das hält den Editor ruhiger.
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "on"
+    },
+
+    // Tabulatorbreite für Markdown fest auf 2.
+    // Das passt gut zu Listen und Unterlisten.
+    "editor.tabSize": 2,
+
+    // In Markdown grundsätzlich Leerzeichen statt Tabs verwenden.
+    // Das ist die kompatible und saubere Variante.
+    "editor.insertSpaces": true,
+
+    // Nach Möglichkeit kein automatisches Entfernen nachgestellter Leerzeichen.
+    // In Markdown können zwei Leerzeichen am Zeilenende bewusst einen
+    // Zeilenumbruch erzeugen. Deshalb bleibt diese Funktion hier aus.
+    "files.trimTrailingWhitespace": false,
+
+    // Standard-Formatter für Markdown.
+    // Dieser Eintrag betrifft den Formatter, aber NICHT markdownlint.
+    // Für Tabellen bleibt damit weiterhin Deine Tabellen-Erweiterung zuständig.
+    "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+  },
+
+  // ============================================================================
+  // GIT
+  // ============================================================================
+
+  // Erlaubt Commit direkt aus dem Source-Control-Bereich, wenn Dateien gestaged
+  // oder alle Änderungen berücksichtigt werden sollen.
+  "git.enableSmartCommit": true,
+
+  // Keine zusätzliche Rückfrage vor dem Synchronisieren.
+  // Das beschleunigt den Ablauf, setzt aber voraus, dass Du genau weißt,
+  // wann Du pushen oder pullen willst.
+  "git.confirmSync": false,
+
+  // ============================================================================
+  // SICHERHEIT / WORKSPACE TRUST
+  // ============================================================================
+
+  // Lose, nicht vertrauenswürdige Dateien direkt im aktuellen Fenster öffnen,
+  // statt Rückfrage oder neues Restricted-Mode-Fenster.
+  // Bequem, aber etwas weniger defensiv als die Standardabfrage.
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ============================================================================
+  // RECHTSCHREIBPRÜFUNG (Code Spell Checker / cSpell)
+  // ============================================================================
+
+  // Aktive Wörterbücher: Englisch und Deutsch.
+  // Geeignet für gemischte technische Dokumentation und Quelltext.
+  "cSpell.language": "en,de-DE",
+
+  // Benutzerdefinierte Fach- und Sonderwörter, die nicht als Fehler markiert
+  // werden sollen.
+  "cSpell.userWords": [
+    "Geviertstrich",
+    "Halbgeviertstrich"
+  ],
+
+  // ============================================================================
+  // MARKDOWNLINT
+  // ============================================================================
+
+  "markdownlint.config": {
+    // MD013 = line-length
+    // Für normale Dokumentation oft störend, weil Fließtext, URLs oder Tabellen
+    // sonst ständig Warnungen erzeugen.
+    "MD013": false,
+
+    // MD024 = no-duplicate-heading
+    // Mit siblings_only=true sind gleiche Überschriften in verschiedenen
+    // Abschnitten erlaubt, aber nicht direkt nebeneinander auf derselben Ebene.
+    "MD024": {
+      "siblings_only": true
+    },
+
+    // MD029 = ordered-list-item-prefix
+    // WICHTIG:
+    // Hier wird jetzt "ordered" verwendet.
+    // Das bedeutet: nummerierte Listen sollen im Quelltext als
+    // 1. 2. 3. 4. 5. geschrieben werden.
+    // Damit passt markdownlint zu Deinem gewünschten Schreibstil.
+    "MD029": {
+      "style": "ordered"
+    }
+  },
+
+  // ============================================================================
+  // MARKDOWN ALL IN ONE
+  // ============================================================================
+
+  // Pfad-Autovervollständigung soll VS-Code-Ausschlüsse respektieren.
+  // Dadurch tauchen z. B. ausgeschlossene Verzeichnisse nicht unnötig auf.
+  "markdown.extension.completion.respectVscodeSearchExclude": true,
+
+  // Listen immer mit 2 Leerzeichen einrücken.
+  // Feste 2 Leerzeichen sind deterministisch und für technische Doku gut lesbar.
+  "markdown.extension.list.indentationSize": 2,
+
+  // WICHTIG:
+  // Geordnete Listen sollen im Quelltext fortlaufend nummeriert werden.
+  // Also 1. 2. 3. 4. statt überall 1.
+  // Damit arbeitet Markdown All in One nun im selben Stil wie markdownlint.
+  "markdown.extension.orderedList.marker": "ordered",
+
+  // Nummerierte Listen beim Bearbeiten automatisch fortschreiben.
+  // Das ist praktisch beim Schreiben:
+  // Nach Enter kommt automatisch die nächste Zahl.
+  "markdown.extension.orderedList.autoRenumber": true,
+
+  // GitHub-kompatible Slugs für TOC-Links verwenden.
+  "markdown.extension.toc.slugifyMode": "github",
+
+  // Inhaltsverzeichnisse standardmäßig als ungeordnete Liste erzeugen.
+  "markdown.extension.toc.orderedList": false,
+
+  // Marker für ungeordnete TOC-Listen fest auf Bindestrich setzen.
+  "markdown.extension.toc.unorderedList.marker": "-",
+
+  // Nur Überschriften Ebene 2 bis 4 ins TOC aufnehmen.
+  // Das hält Inhaltsverzeichnisse kompakt.
+  "markdown.extension.toc.levels": "2..4",
+
+  // Automatische TOC-Aktualisierung beim Speichern bewusst AUS.
+  // Das verhindert überraschende Umbauten an bestehenden Dokumenten.
+  "markdown.extension.toc.updateOnSave": false,
+
+  // GFM-Tabellenformatter aktiv lassen.
+  "markdown.extension.tableFormatter.enabled": true,
+
+  // Markdown-Vorschau nicht automatisch beim Öffnen einblenden.
+  // Verhindert unnötige zusätzliche Editor-Spalten.
+  "markdown.extension.preview.autoShowPreviewToSide": false
+}

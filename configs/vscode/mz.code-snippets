@@ -1,0 +1,60 @@
+// ~/.config/Code/User/snippets/
+// $env:USERPROFILE + '\AppData\Roaming\Code\User\snippets\'
+// Version: 2026-03-19 14:30:24
+{
+	"mzUTF8-SIGNAL": {
+		"prefix": "mzUTF8-SIGNAL",
+		"body": [
+		  "# UTF-8 signal: ʘ‿ʘ Grüß Gott – Ça va? – ¿Qué tal? – Привет – 你好 – שלום – नमस्ते – مرحبا"
+		],
+		"description": "Fügt eine Zeile ein, die eindeutig UTF-8-Kodierung anzeigt"
+	  } 
+
+	  , "mzUTF8-BOM-SIGNAL": {
+		"prefix": "mzUTF8-BOM-SIGNAL",
+		"body": [
+		  "# UTF-8 BOM signal: ʘ‿ʘ Grüß Gott (EF BB BF) >Format-Hex .\\script.ps1 -Count 3"
+		],
+		"description": "Fügt eine Zeile ein, die eindeutig UTF-8-Kodierung anzeigt und auf BOM hinweist, nur für Ps 5.1 Abwärtskompatibiliät gedacht"
+	  }
+	  
+	, "mzWIN1252-SIGNAL": {
+	  "prefix": "mzWIN1252-SIGNAL",
+	  "body": [
+		"# Windows-1252 signal: äöü ÄÖÜ ß € „“ ‚‘ «» – — ©®"
+	  ],
+	  "description": "Fügt eine Zeile ein, die eindeutig Windows-1252-Kodierung anzeigt"
+	}
+  
+	, "mzEOL-CRLF-SIGNAL": {
+	  "prefix": "mzEOL-CRLF-SIGNAL",
+	  "body": [
+		"# EOL signal: Diese Datei verwendet CRLF (\\r\\n) als Zeilenende. Prüfe in der Statusleiste und Editoranzeige."
+	  ],
+	  "description": "Hinweiszeile, dass diese Datei mit CRLF-Zeilenenden gespeichert werden soll"
+	}
+  
+	, "mzEOL-LF-SIGNAL": {
+	  "prefix": "mzEOL-LF-SIGNAL",
+	  "body": [
+		"# EOL signal: Diese Datei verwendet LF (\\n) als Zeilenende. Prüfe in der Statusleiste und Editoranzeige."
+	  ],
+	  "description": "Hinweiszeile, dass diese Datei mit LF-Zeilenenden gespeichert werden soll"
+	}
+
+	, "mzTsIso8601": {
+		"prefix": "mzTsIso8601",
+		"body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
+		"description": "Fügt das aktuelle Datum und die Uhrzeit ein"
+	}
+
+	, "mzTableBasic": {
+	  "prefix": "mzTableBasic",
+	  "body": [
+	    "| ID | Name | Status |",
+	    "|----|------|--------|",
+	    "|    |      |        |"
+	  ]
+	}
+}
+  

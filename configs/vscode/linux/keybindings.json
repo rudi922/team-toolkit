@@ -1,0 +1,27 @@
+ // ============================================================================
+ // VS Code Tastatureinstellungen, Linux
+ // Version: 2026-03-17 09:37:10
+ // Pfad: ~/.config/Code/User/keybindings.json
+ // ============================================================================
+[
+    {
+        "key": "shift+f5",
+        "command": "-workbench.action.debug.stop",
+        "when": "inDebugMode && !focusedSessionIsAttach"
+    },
+    {
+        "key": "ctrl+shift+[BracketLeft]",
+        "command": "editor.action.transformToUppercase"
+        // STRG+SHIFT+ü
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "editor.action.insertSnippet",
+        "when": "!editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+[Quote]",
+        "command": "editor.action.transformToLowercase"
+        // STRG+SHIFT+ä
+    }
+]
