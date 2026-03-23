@@ -1,0 +1,16 @@
+chihiro718.whitespacepp
+davidanson.vscode-markdownlint
+jdinhlife.gruvbox
+liviuschera.noctis
+mads-hartmann.bash-ide-vscode
+ms-ceintl.vscode-language-pack-de
+ms-vscode.powershell
+naturaltheme.natural-theme
+pdconsec.vscode-print
+pkief.material-icon-theme
+rogalmic.bash-debug
+streetsidesoftware.code-spell-checker
+streetsidesoftware.code-spell-checker-german
+takumii.markdowntable
+timonwong.shellcheck
+yzhang.markdown-all-in-one
