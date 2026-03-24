@@ -1,0 +1,14 @@
+chihiro718.whitespacepp@1.2.0
+davidanson.vscode-markdownlint@0.61.1
+jdinhlife.gruvbox@1.29.0
+liviuschera.noctis@10.43.3
+ms-ceintl.vscode-language-pack-de@1.110.2026032303
+naturaltheme.natural-theme@1.0.1
+pdconsec.vscode-print@1.6.0
+pkief.material-icon-theme@5.32.0
+streetsidesoftware.code-spell-checker@4.5.6
+streetsidesoftware.code-spell-checker-german@2.3.4
+takumii.markdowntable@0.13.0
+timonwong.shellcheck@0.39.2
+yzhang.markdown-all-in-one@3.6.3
+ms-vscode.powershell@2025.4.0
