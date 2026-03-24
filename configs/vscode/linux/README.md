@@ -5,7 +5,7 @@
 **Erweiterungen (Auflistung) in Datei speichern**  
 
 ``` bash
-code --list-extensions > extensions_list.txt
+code --list-extensions --show-versions > extensions_list.txt
 ```
 
 **Erweiterungen (Auflistung) auf anderem PC aus Auflistung installieren**  
