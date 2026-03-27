@@ -2,10 +2,10 @@
 
 🧩
 > Kurze, prägnante Beschreibung des Projekts  
-> (Was ist das Ziel? Wofür wird es verwendet?)
+> (Was ist das Ziel? Wofür wird es verwendet?)  
 🧑‍🔬 Autor: ...  
 ⚖️ Lizenz: Frei nutzbar, kopierbar und veränderbar, auf eigene Gefahr und ohne Gewährleistung.  
-> Lizenztyp hier eintragen/ändern (z. B. MIT, Apache 2.0)
+> Lizenztyp hier eintragen/ändern (z. B. MIT, Apache 2.0)  
 🗓️ Version: ...
 
 UTF-8 signal: ʘ‿ʘ Grüß Gott – Ça va? – ¿Qué tal? – Привет – 你好 – שלום – नमस्ते – مرحبا
