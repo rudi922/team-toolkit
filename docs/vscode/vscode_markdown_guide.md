@@ -1,9 +1,9 @@
 
-# 🧭 VS Code Markdown-Arbeitsumgebung (kontrolliert & offline)
+# 🧭 VS Code Markdown - Arbeitsumgebung und Anleitung
 
-🧩 Diese Datei zeigt beschreibt die optimale Bearbeitung von Markdown-Dateien mit Visual Studio Code mit bestimmten VSIX-Erweiterungen und unter Beachtung der Einstellungen in setting.json.  
+🧩 Diese Datei beschreibt die optimale Bearbeitung von Markdown-Dateien mit Visual Studio Code mit bestimmten VSIX-Erweiterungen und unter Beachtung der Einstellungen in setting.json.  
 🧑‍🔬 Autor: Dipl.-Ing. Alfred Menzel  
-🗓️ Version: 2026-03-25 11:27:29  
+🗓️ Version: 2026-03-27 11:17:17  
 
 UTF-8 signal: ʘ‿ʘ Grüß Gott – Ça va? – ¿Qué tal? – Привет – 你好 – שלום – नमस्ते – مرحبا
 
@@ -17,7 +17,7 @@ UTF-8 signal: ʘ‿ʘ Grüß Gott – Ça va? – ¿Qué tal? – Привет �
 
 ---
 
-## ⚙️ Grundprinzip der Konfiguration (settings.json)
+## ⚙️ Grundprinzip der Konfiguration (settings.json) für das Schreiben von Markdown (Editor-Verhalten)
 
 Die settings.json ist klar ausgerichtet auf:
 
@@ -26,13 +26,9 @@ Die settings.json ist klar ausgerichtet auf:
 - ✅ Sichtbarkeit aller Zeichen (Whitespace, Unicode)
 - ✅ Offline-Betrieb ohne Marketplace
 
----
-
-## ✍️ Markdown schreiben (Editor-Verhalten)
-
 ### Zeilenumbruch
 
-- wordWrap = on → nur visuell
+- wordWrap = virtueller Zeilenumbruch im Editor
 
 ### Einrückung
 
@@ -44,23 +40,21 @@ Die settings.json ist klar ausgerichtet auf:
 - formatOnSave = false
 - markdownlint Auto-Fix = deaktiviert
 
-➡️ Der Autor bestimmst jede Änderung selbst.
+💡 Der Autor bestimmt jede Änderung selbst.
 
 ---
 
-## 📐 markdownlint – Regeln verstehen und nutzen
+## 📦 VSIX `markdownlint` – Qualitätssicherung für Markdown-Dateien
 
 ### Ziel
 
-Qualitätssicherung für Markdown
+Durch die Verwendung von **`markdownlint`** wird die Validität von Markdown-Dateien gewährleistet.
 
-### Aktive Regeln (Auszug)
+### Aktive Regeln (Auszug) in der setting.json
 
 - MD013: deaktiviert → keine Zeilenlängenbegrenzung
 - MD024: gleiche Überschriften erlaubt
 - MD029: echte Nummerierung erforderlich
-
----
 
 ### Typischer Workflow
 
@@ -70,27 +64,19 @@ Qualitätssicherung für Markdown
    - korrigieren
    - bewusst ignorieren
 
-➡️ KEIN Auto-Fix → volle Kontrolle
+📌 Damit die Kontrolle über Änderungen behalten wird, ist Auto-Fix in der settings.json deaktiviert.
 
 ---
 
-## 🔢 Listenverhalten (WICHTIG)
+## 📦 VSIX `Markdown All in One` – Formatierungshilfe für Markdown-Dateien
 
-### Einstellung
+### Ziel
 
-**markdown-all-in-one:**
+`Markdown All in One` erleichtert das Schreiben von Markdown durch automatische Formatierungen und Shortcuts.
 
-- automatische Nummerierung aktiv
+### Aufzählungen und Listenerstellung
 
-**markdownlint:**
-
-- erzwingt echte Nummern (MD029)
-
----
-
-### Best Practice
-
-**Beim Schreiben:**
+**Schreiben (Vorgehen):**
 
 ``` list
 1. Punkt
@@ -106,11 +92,33 @@ Qualitätssicherung für Markdown
 3. Punkt
 ```
 
-➡️ Kombination ist korrekt und gewollt
+👉 Die Aufzählungliste wird nach dem letzten Zeilenumbruch automatisch korrigiert.
+Die Erstellung von Unterstrukturen in der Aufzählung ist möglich.
+
+📌 Zur Harmonisierung der Funktionalität sind in der `settings.json` folgende Einstellungen aktiv.  
+
+**Markdown All in One:**
+
+- automatische Nummerierung aktiv
+
+**markdownlint:**
+
+- erzwingt echte Nummern (MD029)
+
+### Markdown All in One: Weitere Funktionen, Schriftstile ändern u.a.
+
+👉 Verwende hierfür die Befehlspalette `STRG+UMSCHALT+P` und die Zeichenfolge `Markdown All in One:`
 
 ---
 
-## 📊 Tabellen (takumii.markdowntable)
+## 📦 VSIX `Markdown Table` – Bearbeitungshilfe für Tabellen
+
+### Ziel
+
+Diese Erweiterung erleichtert die Handhabung und Formatierung von Tabellen.
+Spalten werden sauber ausgerichtet und ggf. erweitert.
+
+---
 
 ### Tabelle erstellen
 
@@ -121,6 +129,9 @@ Qualitätssicherung für Markdown
 |---------|---------|
 |         |         |
 ```
+
+👉 Verwende das Snippet `mzTable` um eine Standardtabelle zu erstellen.
+Diese Standardtabelle kann im Anschluss beliebig geändert und erweitert werden.
 
 ---
 
@@ -133,96 +144,119 @@ Qualitätssicherung für Markdown
 
 ### Spalten einfügen
 
-**Command Palette:**
-
-Markdown Table: Insert Column
-
----
-
-### Formatierung
-
-Tabellen werden sauber ausgerichtet (manuell triggern empfohlen)
-
----
-
-## 📑 Markdown All in One
-
-### Funktionen
-
-- Listenverwaltung
-- TOC (Inhaltsverzeichnis)
-- Tabellenformatierung
-- Shortcuts
+Verwende hierfür die Befehlspalette `STRG+UMSCHALT+P` und die Zeichenfolge `Markdown Table: Insert Column`
 
 ---
 
 ### Inhaltsverzeichnis erstellen
 
-**Command Palette:**
+Verwende hierfür die Befehlspalette `STRG+UMSCHALT+P` und die Zeichenfolge `Markdown All in One: Create Table of Contents`
 
-Markdown All in One: Create Table of Contents
-
----
-
-### TOC Einstellungen
+Das erstellte Inhaltsverzeichnis ist:
 
 - GitHub-kompatibel
-- Ebenen: H2–H4
-- kein Auto-Update
+- enthält die Ebenen H2–H4
+- verwendet kein Auto-Update
 
-➡️ bewusst manuell aktualisieren
+📌 Nach der Markdown Bearbeitung muss das Inhaltsverzeichnis manuell aktualisiert werden.
 
----
+## Stilrichtlinien
 
-## 🔍 Sichtbarkeit & Qualität
-
-Aktiv:
-
-- Whitespace sichtbar
-- Unicode-Prüfung aktiv
-- Steuerzeichen sichtbar
-
-➡️ Vorteil:
-
-- keine versteckten Fehler
+### Tabellen Arbeitsanweisung, grundsätzliches
 
 ---
 
-## 🚫 Bewusst deaktiviert
+#### Zellinhalte, kurz und präzise
 
-- Auto-Formatierung
-- Auto-Fix
-- Marketplace
-- Updates
-- Telemetrie
+Tabellenzellen sollen möglichst kurze Inhalte enthalten:
 
-➡️ maximale Stabilität
+- Kennzeichen
+- Status
+- Datum
+- kurze Bezeichnungen
+- knappe Bemerkungen
 
----
+Nicht geeignet sind:
 
-## 🧠 Empfohlenes Arbeitsmuster
-
-### Schreiben
-
-- strukturiert und manuell
-
-### Prüfen
-
-- markdownlint bewusst nutzen
-
-### Formatieren
-
-- nur gezielt ausführen
+- lange Fließtexte
+- ganze Absätze
+- komplizierte Argumentationen
 
 ---
 
-## 🎯 Fazit
+#### Mehrzeilige Inhalte
 
-Das Setup ist:
+Echte mehrzeilige Tabellenzellen unterstützt Markdown nicht direkt.  
+Zulässige Lösung:
 
-- stabil
-- reproduzierbar
-- offline-fähig
-- kontrolliert
+``` markdown
+| ID | Beschreibung |
+|----|--------------|
+| 1  | Zeile 1<br>Zeile 2<br>Zeile 3 |
+```
 
-Die Arbeit erfolgt nicht automatisiert, sondern deterministisch.
+Empfehlung:
+
+- Für kurze Umbrüche: `<br>`
+- Für längere Inhalte: Tabelle vermeiden oder auf mehrere Zeilen aufteilen
+
+---
+
+#### Listen innerhalb von Zellen
+
+Wenn nötig, können Listen mit `<br>` angedeutet werden:
+
+```markdown
+| ID | Punkte |
+|----|--------|
+| 1  | - Punkt A<br>- Punkt B<br>- Punkt C |
+```
+
+---
+
+#### Pipe-Zeichen in Zellen
+
+Das Zeichen `|` trennt Spalten.  
+Wenn es als Inhalt erscheinen soll, muss es maskiert oder vermieden werden.
+
+Beispiel:
+
+```markdown
+\|
+```
+
+---
+
+#### Basisverfahren der Tabellenbearbeitung
+
+Empfohlenes Vorgehen:
+
+1. Grundtabelle anlegen
+2. Cursor in die Tabelle setzen
+3. mit `Tab` zwischen Feldern springen
+4. Datenzeilen durch Duplizieren erweitern
+5. zusätzliche Spalten bei Bedarf mit der Erweiterung einfügen
+
+---
+
+### Datumsformat
+
+Datumsangaben sollten im ISO-Format geschrieben werden:
+
+```text
+YYYY-MM-DD
+```
+
+Beispiel:
+
+```text
+2026-03-19
+```
+
+Begründung:
+
+- maschinenfreundlich
+- sortierbar
+- eindeutig
+- archivtauglich
+- exporttauglich
