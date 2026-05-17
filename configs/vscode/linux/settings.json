@@ -1,13 +1,35 @@
 {
   // ============================================================================
   // VS Code User Settings, Linux
-  // Version: 2026-03-20 15:25:48
+  // Version: 2026-05-17 10:07:37
   //
-  // Hinweis:
+  // Hinweis an ChatGPT:
   // Diese Datei ist bewusst als JSON mit Kommentaren aufgebaut.
   // VS Code akzeptiert das in der settings.json problemlos.
   // Streng genommen ist das JSONC (JSON with Comments).
+  // Historie:
+  // 2026-05-17 08:45:00  telemetry off  
   // ============================================================================
+
+  // ============================================================================
+  // VSCode Einstellungen
+  // ============================================================================
+
+
+  // **Anzeigesprache aus Deutsch ändern:**
+  // - Befehlspalette öffnen
+  //   Ctrl + Shift + P
+  // - Eingeben: ***Configure Display Language***
+  // - In der Liste “Deutsch (German)” auswählen.
+  // - Falls Deutsch nicht verfügbar ist, Sprachpaket installieren.
+  //    - Deutsch-Sprachpaket installieren:
+  //    - Menü links → Extensions (Erweiterungen)
+  //    - Suche nach: “German Language Pack for Visual Studio Code”
+  //    - Installieren.
+  //  - VS Code neu starten → Oberfläche ist auf Deutsch.
+
+  // Code-Übertragung an Microsoft aus
+  "telemetry.telemetryLevel": "off",
 
   // ============================================================================
   // OBERFLÄCHE / STARTVERHALTEN
