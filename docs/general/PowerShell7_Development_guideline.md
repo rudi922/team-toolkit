@@ -3,7 +3,7 @@
 🪧 **Geltungsbereich:** Neue und überarbeitete PowerShell-7-Skripte  
 🏷️ **Zielplattform:** PowerShell 7+  
 📌 **Grundsatz:** Streng typisiert, klar benannt, modular aufgebaut, Unicode-fähig, reproduzierbar und technisch nachvollziehbar.  
-🗓️ **Stand:** 2026-04-21 09:15:28  
+🗓️ **Stand:** 2026-06-09 10:06:59
 
 UTF-8 signal: ʘ‿ʘ-Grüß Gott–Ça va?–¿Qué tal?–Привет–你好–שלום –नमस्ते–مرحبا
 ---
@@ -49,6 +49,12 @@ Die Typinformation soll bereits im Variablennamen sichtbar sein.
 - `obj...` = Objekt
 - `ref...` = Referenzvariable / `[ref]`
 - `htb...` = Hashtable oder Mapping-Struktur
+- `dec...` = Decimal
+- `dbl...` = Double
+- `dtm...` = DateTime
+- `lst...` = generische Liste
+- `dic...` = Dictionary
+- `pso...` = PSCustomObject
 
 ### 3.3 Beispiele
 
@@ -93,7 +99,8 @@ Bevorzugt werden klare Typangaben wie zum Beispiel:
 - Globale oder scriptweite Variablen gehören in einen klaren Initialisierungsbereich.
 - Lokale Variablen einer Funktion gehören in einen **Deklarationsblock am Beginn der Funktion**.
 - Arbeitsvariablen dürfen nicht ungeordnet mitten im Programmfluss entstehen.
-- Bereits deklarierte Variablen sollen nach Möglichkeit gezielt wiederverwendet werden.
+- Bereits deklarierte Variablen sollen gezielt wiederverwendet werden, sofern ihre fachliche Bedeutung unverändert bleibt.
+- Eine Variable darf nicht für wechselnde Bedeutungen missbraucht werden.
 
 **Hinweis:** Auch Schleifenvariablen müssen im Deklarationsblock deklariert werden.
 
@@ -148,7 +155,8 @@ Fehler sollen früh, klar und reproduzierbar erkannt werden.
 
 Verbindliche Grundsätze:
 
-- `Set-StrictMode -Version Latest`
+- `Set-StrictMode -Version Latest` für maximale Fehlerfrüherkennung.
+- Falls langfristig reproduzierbares Verhalten wichtiger ist als maximale Strenge, kann eine feste StrictMode-Version verwendet werden.
 - `$ErrorActionPreference = 'Stop'`
 
 Ziel:
@@ -184,6 +192,7 @@ Unicode-Dekorationen oder gezielte Unicode-Testausgaben können deshalb sinnvoll
 ### 9.4 Dateikodierung
 
 - Skripte sind bevorzugt als **UTF-8** abzulegen.
+- Für neue PowerShell-7-Skripte ist UTF-8 ohne BOM der bevorzugte Standard, sofern keine Altumgebung ausdrücklich etwas anderes erfordert.
 - Konsolenausgabe und Dateiausgabe sollen bewusst auf Unicode-Fähigkeit ausgelegt sein.
 - Encoding-Probleme sollen nicht stillschweigend umgangen, sondern erkannt und sauber behandelt werden.
 
@@ -245,6 +254,8 @@ Ein Skript soll auch dann noch technisch nachvollziehbar bleiben, wenn es im `Wh
 
 ## 13. Modularisierung und STEP-Prinzip
 
+### 13.1 Grundsatz
+
 Fachlogik ist in klar getrennte Verarbeitungsschritte aufzuteilen.
 
 Bevorzugtes Muster:
@@ -259,6 +270,27 @@ Ziel:
 - bessere Testbarkeit
 - bessere Wartbarkeit
 - klare Verantwortlichkeiten im Code
+
+### 13.2 Plattformspezifische Funktionen
+
+Klare Regel:
+
+- Die öffentliche Hauptfunktion bekommt einen fachlichen Namen.
+- Die internen Hilfsfunktionen bekommen den Zusatz Windows oder Linux, sofern sie plattformspezifisch sind.
+
+Die plattformspezifischen Funktionsnamen sind um den Namen des Betriebssystems als Suffix wie folgt zu erweitern:
+
+- `Get-ConfigPath_Windows`
+- `Get-ConfigPath_Linux`
+
+### 13.3 Plattformspezifische Verarbeitungsschritte
+
+Einzelne Verarbeitungsschritte können für unterschiedliche Plattformen erstellt werden.
+
+Die plattformspezifischen Funktionsnamen der Verarbeitungsschritte sind um den Namen des Betriebssystems als Suffix wie folgt zu erweitern:
+
+- `Invoke-STEP01_Windows`
+- `Invoke-STEP01_Linux`
 
 ---
 
@@ -363,7 +395,20 @@ Ein neues Skript entspricht dieser Richtlinie, wenn es insbesondere folgende Mer
 
 ---
 
-## 21. Kurzform der Leitlinie
+## 21. Dokumentation
+
+### 21.1 Grundsatz
+
+Skripte und Funktionen sind mit einer kommentarbasierten Hilfe und Beschreibung zu versehen, damit die Hilfe über `Get-Help` auswertbar ist.
+
+### 21.2 Name der Skriptdatei in der Hilfe und den Kommentaren
+
+In allen Kommentaren und insbesondere in den Beispielen der kommentarbasierten Hilfe ist der Name der Skriptdatei symbolisch als `scriptname.ps1` zu bezeichnen.
+Damit werden Umbenennungen und Dokumentationskonflikte bei der späteren Weiterverwendung des Skriptes unter einem anderen Namen vermieden.
+
+---
+
+## 22. Kurzform der Leitlinie
 
 Die PowerShell-7-Entwicklung erfolgt nach folgendem Leitbild:
 
