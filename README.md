@@ -15,37 +15,6 @@ Dieses Repository dient als Referenz und Werkzeugkasten zur:
 
 ---
 
-## Struktur
-
-```
-team-toolkit/
-├── README.md
-├── docs/
-│   ├── linux/
-│   ├── windows/
-│   ├── vscode/
-│   └── general/
-├── configs/
-│   ├── linux/
-│   │   └── bash/
-│   ├── windows/
-│   │   └── powershell/
-│   └── vscode/
-│       ├── linux/
-│       ├── windows/
-│       └── common/
-├── scripts/
-│   ├── linux/
-│   ├── windows/
-│   └── crossplatform/
-├── examples/
-│   ├── templates/
-│   └── samples/
-└── assets/
-```
-
----
-
 ## Inhalte
 
 ### docs/
