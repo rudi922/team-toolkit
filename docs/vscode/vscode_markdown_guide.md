@@ -171,11 +171,12 @@ Das erstellte Inhaltsverzeichnis ist:
 Die Ausrichtung wird mit dem Doppelpunkt `:` in der Headertrennlinie gesteuert.
 
 ``` table
-| PersonalID | Name      | Funktionalität |
-| ---------: | :-------- | :------------: |
-|          1 | Meier     |    Direktor    |
-|          2 | Schnieder |    Pförtner    |
-|          3 | Richter   |   Buchhalter   |
+| PersonalID | Name      |                    Funktion                     |
+| ---------: | :-------- | :---------------------------------------------: |
+|          1 | Meier     |                    Direktor                     |
+|          2 | Schnieder |                    Pförtner                     |
+|          3 | Richter   |                   Buchhalter                    |
+|          4 | Widukind  | Arbeitsschutzbeauftragter und Brandschutzhelfer |
 ```
 
 #### Zellinhalte, kurz und präzise
