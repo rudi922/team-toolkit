@@ -3,7 +3,7 @@
 
 🧩 Diese Datei beschreibt die optimale Bearbeitung von Markdown-Dateien mit Visual Studio Code mit bestimmten VSIX-Erweiterungen und unter Beachtung der Einstellungen in setting.json.  
 🧑‍🔬 Autor: Dipl.-Ing. Alfred Menzel  
-🗓️ Version: 2026-03-27 11:17:17  
+🗓️ Version: 2026-09-12 14:13:04
 
 UTF-8 signal: ʘ‿ʘ Grüß Gott – Ça va? – ¿Qué tal? – Привет – 你好 – שלום – नमस्ते – مرحبا
 
@@ -236,6 +236,17 @@ Empfohlenes Vorgehen:
 3. mit `Tab` zwischen Feldern springen
 4. Datenzeilen durch Duplizieren erweitern
 5. zusätzliche Spalten bei Bedarf mit der Erweiterung einfügen
+
+
+##### Ausrichtung innerhalb von Zellen
+
+Die Ausrichtung wird mit dem Doppelpunkt `:` in der Headertrennlinie gesteuert.
+
+| PersonalID | Name      | Funktionalität |
+| ---------: | :-------- | :------------: |
+|          1 | Meier     |    Direktor    |
+|          2 | Schnieder |    Pförtner    |
+|          3 | Richter   |   Buchhalter   |
 
 ---
 
