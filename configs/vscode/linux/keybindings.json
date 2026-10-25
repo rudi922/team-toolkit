@@ -1,6 +1,6 @@
  // ============================================================================
  // VS Code Tastatureinstellungen, Linux
- // Version: 2026-03-17 09:37:10
+ // Version: 2026-10-25 13:25:08
  // Pfad: ~/.config/Code/User/keybindings.json
  // ============================================================================
 [
@@ -23,5 +23,9 @@
         "key": "ctrl+shift+[Quote]",
         "command": "editor.action.transformToLowercase"
         // STRG+SHIFT+ä
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "markdown-pdf-plus.export.pdf"
     }
 ]
