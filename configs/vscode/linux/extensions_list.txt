@@ -13,4 +13,5 @@ streetsidesoftware.code-spell-checker@4.5.6
 streetsidesoftware.code-spell-checker-german@2.3.4
 takumii.markdowntable@0.13.0
 timonwong.shellcheck@0.39.2
+tom-latham.markdown-pdf-plus@2.0.0
 yzhang.markdown-all-in-one@3.6.3
