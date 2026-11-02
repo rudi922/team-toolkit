@@ -1,6 +1,17 @@
-// ~/.config/Code/User/snippets/
-// $env:USERPROFILE + '\AppData\Roaming\Code\User\snippets\'
-// Version: 2026-03-19 14:30:24
+
+    // =========================================================================
+    // VS Code - Snippets
+    // Version: 2026-11-02 06:57:04
+    //
+    // Ziel:
+    // - stabile, wartbare Konfiguration
+    // - saubere Markdown-Umgebung
+    // - keine unnötigen Automatismen
+    //
+    // Pfade:
+	// ~/.config/Code/User/snippets/
+	// $env:USERPROFILE + '\AppData\Roaming\Code\User\snippets\'
+	// =========================================================================
 {
 	"mzUTF8-SIGNAL": {
 		"prefix": "mzUTF8-SIGNAL",
@@ -10,13 +21,13 @@
 		"description": "Fügt eine Zeile ein, die eindeutig UTF-8-Kodierung anzeigt"
 	  } 
 
-	  , "mzUTF8-BOM-SIGNAL": {
-		"prefix": "mzUTF8-BOM-SIGNAL",
-		"body": [
-		  "# UTF-8 BOM signal: ʘ‿ʘ Grüß Gott (EF BB BF) >Format-Hex .\\script.ps1 -Count 3"
-		],
-		"description": "Fügt eine Zeile ein, die eindeutig UTF-8-Kodierung anzeigt und auf BOM hinweist, nur für Ps 5.1 Abwärtskompatibiliät gedacht"
-	  }
+	 , "mzUTF8-BOM-SIGNAL": {
+	"prefix": "mzUTF8-BOM-SIGNAL",
+	"body": [
+	  "# UTF-8 BOM signal: ʘ‿ʘ Grüß Gott (EF BB BF) >Format-Hex .\\script.ps1 -Count 3"
+	],
+	"description": "Fügt eine Zeile ein, die eindeutig UTF-8-Kodierung anzeigt und auf BOM hinweist, nur für Ps 5.1 Abwärtskompatibiliät gedacht"
+	 }
 	  
 	, "mzWIN1252-SIGNAL": {
 	  "prefix": "mzWIN1252-SIGNAL",
@@ -47,7 +58,7 @@
 		"body": ["${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE} ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}"],
 		"description": "Fügt das aktuelle Datum und die Uhrzeit ein"
 	}
-
+	
 	, "mzTableBasic": {
 	  "prefix": "mzTableBasic",
 	  "body": [
