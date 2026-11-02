@@ -1,4 +1,19 @@
 // Geben Sie Ihre Tastenzuordnungen in dieser Datei ein, um die Standardwerte außer Kraft zu setzen.
+    // =========================================================================
+    // VS Code - Shortcuts
+    // Version: 2026-11-02 06:57:04
+    //
+    // Ziel:
+    // - stabile, wartbare Konfiguration
+    // - keine unnötigen Automatismen
+    //
+    // Umgebung:
+    // Windows
+    //
+    // Pfade:
+	// ~/.config/Code/User/
+	// $env:USERPROFILE + '\AppData\Roaming\Code\User\'
+	// =========================================================================
 [
     {
         "key": "shift+f5",
@@ -6,6 +21,7 @@
         "when": "inDebugMode && !focusedSessionIsAttach"
     },
     {
+        // STRG+Shift+ü
         "key": "ctrl+shift+oem_1",
         "command": "editor.action.transformToUppercase"
     },
@@ -15,7 +31,12 @@
         "when": "!editorReadonly"
     },
     {
+        // STRG+Shift+ä
         "key": "ctrl+shift+oem_7",
         "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "markdown-pdf-plus.export.pdf"
     }
 ]
