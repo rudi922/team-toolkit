@@ -1,7 +1,7 @@
 {
     // =========================================================================
     // VS Code User Settings (Windows)
-    // Version: 2026-03-20 16:17:19
+    // Version: 2026-11-02 06:57:04
     //
     // Ziel:
     // - stabile, wartbare Konfiguration
@@ -19,7 +19,7 @@
     "editor.indentSize": "tabSize",                // Einrückung folgt tabSize
     "editor.minimap.enabled": false,               // Minimap deaktiviert
 
-    // Hover (Korrektur: boolean statt String!)
+    // Hover aktivieren (Wert: "on")
     "editor.hover.enabled": "on",
     "editor.hover.delay": 300,
 
@@ -58,7 +58,8 @@
     },
 
     "files.associations": {
-        "*.ps1": "powershell"
+        "*.ps1": "powershell",
+        "*.psv": "csv (pipe)"
     },
 
 
@@ -127,7 +128,7 @@
         "plaintext": true,
         "markdown": true,
         "json": true,
-        "ps1": true,
+        "powershell": true,
         "sql": true
     },
 
@@ -146,6 +147,8 @@
     "cSpell.checkVSCodeSystemFiles": true,
 
     "cSpell.userWords": [
+        "Stilrichtlinien",
+        "STRG",
         "Привет"
     ],
 
@@ -157,8 +160,8 @@
     "security.workspace.trust.untrustedFiles": "open",
 
     "security.allowedUNCHosts": [
-        "ks00dat30",
-        "ks00dat04"
+        "[[PH001]]",
+        "[[PH002]]"
     ],
 
 
@@ -173,7 +176,7 @@
     // OFFLINE / TELEMETRIE
     // =========================================================================
 
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "extensions.autoCheckUpdates": false,
     "extensions.ignoreRecommendations": true,
     "extensions.enableMarketplace": false,
@@ -252,5 +255,22 @@
     "markdown.extension.toc.updateOnSave": false,
 
     "markdown.extension.tableFormatter.enabled": true,
-    "markdown.extension.preview.autoShowPreviewToSide": false
+    "markdown.extension.preview.autoShowPreviewToSide": false,
+    "[csv (semicolon)]": {
+        "editor.inlayHints.maximumLength": 0
+    },
+
+    // =========================================================================
+    // RAINBOW CSV
+    // =========================================================================
+
+    // erkennt, führende und nachgestellte Leerzeichen in Zellen
+    "rainbow_csv.csv_lint_detect_trailing_spaces": true,
+
+    // Anzeigeeinstellungen für Pipe-getrennte Dateien
+    // - Legt die maximale Gesamtlänge der eingeblendeten Hinweise pro Zeile fest. 0-keine Längenbegrenzung
+    "[csv (pipe)]": {
+        "editor.inlayHints.maximumLength": 0
+    }
+
 }
