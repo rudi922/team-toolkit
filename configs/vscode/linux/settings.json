@@ -1,7 +1,7 @@
 {
   // ============================================================================
   // VS Code User Settings, Linux
-  // Version: 2026-05-17 10:07:37
+  // Version: 2026-11-08 15:42:25
   //
   // Hinweis an ChatGPT:
   // Diese Datei ist bewusst als JSON mit Kommentaren aufgebaut.
@@ -9,6 +9,8 @@
   // Streng genommen ist das JSONC (JSON with Comments).
   // Historie:
   // 2026-05-17 08:45:00  telemetry off  
+  // 2026-11-08 15:42:25  Ergänzungen Dateitypen, Rainbow CSV, Unicode
+  //                      , VSIX und cSpell
   // ============================================================================
 
   // ============================================================================
@@ -32,16 +34,31 @@
   "telemetry.telemetryLevel": "off",
 
   // ============================================================================
+  // ERWEITERUNGEN / MANUELLE VSIX-UPDATES
+  // ============================================================================
+
+  // Installierte Erweiterungen gezielt aktualisieren.
+  // So bleiben die ausgewählten Versionen stabil, bis Du eine neue Version
+  // manuell installierst, zum Beispiel aus einer lokal abgelegten VSIX-Datei.
+  "extensions.autoUpdate": "off",
+
+  // Die automatische Suche nach neuen Erweiterungsversionen abschalten.
+  // Dieser Schalter steuert die Prüfung im Hintergrund. Die Einstellung
+  // extensions.autoUpdate darüber steuert die automatische Installation.
+  "extensions.autoCheckUpdates": false,
+
+  // Benachrichtigungen über empfohlene Erweiterungen ausblenden.
+  // Das hält die Oberfläche beim Öffnen von Projekten ruhiger, wenn Du
+  // Erweiterungen selbst auswählst und über VSIX-Dateien installierst.
+  "extensions.ignoreRecommendations": true,
+
+  // ============================================================================
   // OBERFLÄCHE / STARTVERHALTEN
   // ============================================================================
 
   // Kein Startbildschirm, keine zuletzt geöffnete Datei als Startansicht.
   // VS Code startet direkt in eine leere oder zuletzt genutzte Arbeitsumgebung.
   "workbench.startupEditor": "none",
-
-  // Farbschema der Benutzeroberfläche.
-  // Das ist rein optisch. Hier ist Dein gewähltes dunkles Theme eingetragen.
-  "workbench.colorTheme": "Noctis Obscuro",
 
   // Dateisymbole im Explorer.
   // Diese Einstellung steuert nur die Symbolanzeige im Dateibaum.
@@ -78,6 +95,12 @@
   // Das ist eine Sicherheitsfunktion gegen verwechselbare oder ungewollte Zeichen.
   "editor.unicodeHighlight.nonBasicASCII": true,
 
+  // Unicode-Hervorhebung auch in Kommentaren aktivieren.
+  // Damit markiert VS Code auffällige Unicode-Zeichen in Skriptkommentaren
+  // auch in vertrauenswürdigen Arbeitsbereichen. Die unten eingetragenen
+  // Ausnahmen für deutsche Zeichen gelten ebenfalls in Kommentaren.
+  "editor.unicodeHighlight.includeComments": true,
+
   // Umlaute und Eszett explizit erlauben, damit deutsche Texte nicht störend
   // markiert werden.
   "editor.unicodeHighlight.allowedCharacters": {
@@ -88,6 +111,24 @@
     "Ö": true,
     "Ü": true,
     "ß": true
+  },
+
+  // ============================================================================
+  // DATEIEN / ZEICHENKODIERUNG UND DATEITYPEN
+  // ============================================================================
+
+  // Zeichenkodierung beim Öffnen automatisch ermitteln.
+  // Das ist hilfreich bei älteren Dateien, die mit einer Windows-Codepage
+  // gespeichert wurden. UTF-8 ist die voreingestellte Zeichenkodierung und
+  // dient als Rückfallwert, wenn VS Code keine andere Kodierung erkennt.
+  "files.autoGuessEncoding": true,
+
+  // .psv-Dateien beim Öffnen dem Sprachmodus CSV (pipe) zuordnen.
+  // Rainbow CSV behandelt den senkrechten Strich | in diesem Modus als
+  // Feldtrenner. So stehen Spaltenfarben, CSVLint und RBQL-Abfragen direkt
+  // für PSV-Dateien zur Verfügung, wenn die Erweiterung installiert ist.
+  "files.associations": {
+    "*.psv": "csv (pipe)"
   },
 
   // ============================================================================
@@ -153,6 +194,22 @@
     "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
   },
 
+  // Anzeige für Pipe-getrennte Tabellen im Sprachmodus CSV (pipe).
+  // Rainbow CSV verwendet für die virtuelle Spaltenausrichtung eingeblendete
+  // Hinweise. Der Wert 0 hebt die Begrenzung ihrer Gesamtlänge pro Zeile auf.
+  // Dadurch kann VS Code auch in breiten PSV-Tabellen alle virtuellen Abstände
+  // für die Spaltenausrichtung darstellen.
+  "[csv (pipe)]": {
+    "editor.inlayHints.maximumLength": 0
+  },
+
+  // Anzeige für Tabellen im Sprachmodus CSV (semicolon).
+  // Auch bei vielen Spalten darf die virtuelle Ausrichtung die gesamte
+  // Zeilenbreite für die eingeblendeten Abstände nutzen.
+  "[csv (semicolon)]": {
+    "editor.inlayHints.maximumLength": 0
+  },
+
   // ============================================================================
   // GIT
   // ============================================================================
@@ -183,12 +240,48 @@
   // Geeignet für gemischte technische Dokumentation und Quelltext.
   "cSpell.language": "en,de-DE",
 
+  // Dateien und Verzeichnisse von der Rechtschreibprüfung ausnehmen.
+  // Die Ausschlüsse für Abhängigkeiten, Git-Metadaten und VS-Code-Ordner
+  // entsprechen der Windows-Konfiguration. PSV-Dateien enthalten häufig
+  // technische Kennungen und strukturierte Werte. Ihre Tabellenstruktur
+  // und Feldabstände lassen sich mit Rainbow CSV prüfen.
+  "cSpell.ignorePaths": [
+    // Abhängigkeiten, Lock-Dateien und Erweiterungsartefakte.
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+
+    // Interne Git-Dateien und lokale Konfigurationsverzeichnisse von VS Code.
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+
+    // Pipe-getrennte Datendateien.
+    "*.psv"
+  ],
+
   // Benutzerdefinierte Fach- und Sonderwörter, die nicht als Fehler markiert
   // werden sollen.
+  // Die Liste enthält die bisherigen Linux-Begriffe und die ergänzenden
+  // Einträge aus der Windows-Konfiguration.
   "cSpell.userWords": [
     "Geviertstrich",
-    "Halbgeviertstrich"
+    "Halbgeviertstrich",
+    "Stilrichtlinien",
+    "STRG",
+    "Привет"
   ],
+
+  // ============================================================================
+  // RAINBOW CSV
+  // ============================================================================
+
+  // CSVLint soll führende und nachgestellte Leerzeichen an Feldrändern melden.
+  // Das erleichtert die Kontrolle vor dem Import oder einem RBQL-Vergleich.
+  // Bei exakten Vergleichen können zusätzliche Leerzeichen bewirken, dass
+  // zwei optisch ähnliche Schlüssel als unterschiedliche Werte gelten.
+  "rainbow_csv.csv_lint_detect_trailing_spaces": true,
 
   // ============================================================================
   // MARKDOWNLINT
@@ -261,7 +354,12 @@
   // GFM-Tabellenformatter aktiv lassen.
   "markdown.extension.tableFormatter.enabled": true,
 
-  // Markdown-Vorschau nicht automatisch beim Öffnen einblenden.
+  // Markdown-Vorschau, minimap etc. nicht automatisch beim Öffnen einblenden.
   // Verhindert unnötige zusätzliche Editor-Spalten.
-  "markdown.extension.preview.autoShowPreviewToSide": false
+  "markdown.extension.preview.autoShowPreviewToSide": false,
+  "editor.minimap.enabled": false,
+  "git.openRepositoryInParentFolders": "never",
+
+  // Theme
+  "workbench.colorTheme": "Noctis Obscuro"
 }
