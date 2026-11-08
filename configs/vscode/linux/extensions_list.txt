@@ -3,7 +3,8 @@ davidanson.vscode-markdownlint@0.61.1
 jdinhlife.gruvbox@1.29.0
 liviuschera.noctis@10.43.3
 mads-hartmann.bash-ide-vscode@1.43.0
-ms-ceintl.vscode-language-pack-de@1.110.2026032303
+mechatroner.rainbow-csv@3.24.1
+ms-ceintl.vscode-language-pack-de@1.118.2026050120
 ms-vscode.powershell@2025.4.0
 naturaltheme.natural-theme@1.0.1
 pdconsec.vscode-print@1.6.0
