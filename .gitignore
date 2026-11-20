@@ -1,0 +1,7 @@
+# lokale Ausschlussanweisungen
+# - prüfe mit `git status --ignored`
+
+# alle versteckten Zeitstempel-Backups ausschließen
+.*_????????_??????
+
+
